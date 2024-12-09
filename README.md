@@ -43,7 +43,21 @@ Borrow out = A'Bin + A'B + BBin
 
 **Program**
 
-![exp 4 2](https://github.com/user-attachments/assets/c8d7cbca-197e-4524-8947-5be7a4c8f5e0)
+module full(a,b,c,sum,carry,diff,borrow);
+
+input a,b;
+
+output sum,carry,diff,borrow;
+
+assign sum=a^b^c;
+
+assign carry=((a^b)&c)|(a&b);
+
+assign diff=a^b^c;
+
+assign borrow=((~(a^b))&c)|((~a)&b);
+
+endmodule
 
 **Procedure**
 
@@ -52,9 +66,11 @@ Developed by:Meenakshi.R RegisterNumber:24003710
 */
 
 **RTL Schematic**
+
 ![exp 4 3](https://github.com/user-attachments/assets/4ad69f5a-3b60-434a-9ca9-43e598b831d0)
 
 **Output Timing Waveform**
+
 ![exp 4 4](https://github.com/user-attachments/assets/4ad5ad1a-c7e4-434c-b872-73a06cdd670b)
 
 
